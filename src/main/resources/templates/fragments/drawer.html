@@ -1,0 +1,27 @@
+<aside th:fragment="drawerr" class="d-flex flex-column align-items-stretch flex-shrink-0 bg-body-tertiary drawer-list borleft">
+    <!--<a href="/" class="d-flex align-items-center flex-shrink-0 p-3 link-body-emphasis text-decoration-none border-bottom">
+        <svg class="bi pe-none me-2" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
+        <span class="fs-5 fw-semibold">List group</span>
+    </a>-->
+
+        <div th:if="${updatelist}" class="list-group list-group-flush border-bottom scrollarea">
+
+            <form th:each="item,loopStatus: ${updatelist}" method="put" th:if="${selected} != ${item.idd}" th:action="@{/{idd}(idd=${item.idd})}" th:class="${loopStatus.last} and ${itemdetail}?'list-group-item list-group-item-action py-3 lh-sm todosidebar active':'list-group-item list-group-item-action py-3 lh-sm todosidebar'" aria-current="true">
+
+               <!-- <a th:each="item: ${updatelist}" th:if="${selected} == ${item.idd}" th:href="@{/{idd}(idd=${item.idd})}" class="list-group-item list-group-item-action py-3 lh-sm active" aria-current="true">-->
+
+                <div class="d-flex w-100 align-items-center justify-content-between">
+                    <span th:class="d-none" name="idd" th:id="${item.idd}" th:text="${item.idd}"></span>
+                    <strong class="mb-1">
+                        <i th:class="'bi ' + ${item.iconname}"></i>
+                        <span th:text="${item.title}"></span>
+                    </strong>
+                    <small class="text-body-secondary" id="deletelist" onclick="deletelist(event)"><i class="bi bi-x-lg"></i></small>
+                </div>
+
+            </form>
+
+
+        </div>
+
+</aside>

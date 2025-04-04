@@ -1,0 +1,43 @@
+.bg-img {
+    background-image: linear-gradient(
+        to right bottom,
+        rgba(230, 230, 230, 0.39),
+        rgba(204, 204, 204, 0.473)
+    ), url("../img/thomas-bormans-pcpsVsyFp_s-unsplash.jpg");
+    background-size: cover;
+    /*background-position: center;*/
+}
+
+.container {
+    height:100vh;
+     justify-content: center;
+     align-items: center;
+
+}
+
+#loginbox {
+        min-width: 400px; /* Minimum width */
+    }
+.form-control {
+        padding: 12px;
+        font-size: 1.1rem;
+}
+
+.btn {
+        padding: 10px 24px;
+        font-size: 1.1rem;
+}
+
+.card-text{
+    margin-top:1.75rem;
+
+}
+
+/*
+linear-gradient (
+    to right bottom,
+    rgba(e6,e6,e6,0.5),
+    rgba(cc,cc,cc,0.473)
+
+)
+*/

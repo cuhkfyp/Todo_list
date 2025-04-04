@@ -1,0 +1,57 @@
+<!--<span th:fragment="itemdetaill" th:if="${itemdetail}">
+    <p th:text="${itemdetail.title}"></p>
+    <p th:text="${itemdetail.iconname}"></p>
+</span>-->
+
+<!--<span th:fragment="itemdetaill" th:if="${itemdetail}">-->
+<form th:fragment="itemdetaill" th:if="${itemdetail}" th:action="@{/}" method="PUT" class="currentform" id="currentsubmitform">
+    <!--<i th:class='bi "${itemdetail.iconname}" currenticon'></i>-->
+    <div class="d-flex currentform">
+        <div class="d-none" th:text="${itemdetail.idd}"></div>
+        <i th:class="'bi ' + ${itemdetail.iconname} + ' currenticon'"></i>
+        <span class="currentitle" th:text="${itemdetail.title}"></span>
+    </div>
+    <div class="currentlistbody">
+        <!--<div class="input-group mb-3 d-flex align-items-center justify-content-center currentlistitem">
+            <div class="input-group-text">
+                <input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for 0following text input">
+            </div>
+            <input type="text" class="form-control" aria-label="Text input with checkbox">
+            <button class="input-group-text">
+                <i class="bi bi-trash"></i>
+            </button>
+        </div>-->
+        <!--icon : ${icons}-->
+        <ul class="list-group d-flex" id="currentul">
+            <li th:if="${todolistdetail}" th:each="tdld : ${todolistdetail}">
+                <div  class="input-group mb-3 d-flex align-items-center justify-content-center currentlistitem" th:name="${tdld.id}">
+                    <div class="input-group-text">
+                        <input class="form-check-input mt-0" type="checkbox" value="" th:checked="${tdld.itemstate}" aria-label="Checkbox for following text input"   />
+                    </div>
+                    <input class="form-control" th:value="${tdld.detail}" type="text" />
+                    <button class="input-group-text" type="button" onclick="deletedetail(event)">
+                        <i class="bi bi-trash"></i>
+                    </button>
+                </div>
+            </li>
+        </ul>
+
+        <div class="input-group mt-3">
+            <input type="text" class="form-control newitementer" id="userinput" aria-label="New todo item">
+            <span class="input-group-text" id="currententer">
+               <i class="bi bi-forward"></i>
+            </span>
+        </div>
+    </div>
+</form>
+
+<script>
+
+</script>
+<!--</span>-->
+
+<!--
+09-07
+03-08
+07-04-02
+-->
